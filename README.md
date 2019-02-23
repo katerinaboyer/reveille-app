@@ -1,3 +1,5 @@
+Add a task tutorial : https://hackernoon.com/create-a-simple-todo-app-in-react-9bd29054566b
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
