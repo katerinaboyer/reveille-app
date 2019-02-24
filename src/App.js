@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
-import TodoList from '/Users/katerinaboyer/Documents/reveille-app/src/components/TodoList.js'
-import TodoItems from '/Users/katerinaboyer/Documents/reveille-app/src/components/TodoItems.js'
+import TodoList from './components/TodoList.js'
+import TodoItems from './components/TodoItems.js'
 
 class App extends Component {
   constructor() {
