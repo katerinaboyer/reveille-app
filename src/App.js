@@ -7,12 +7,16 @@ import ReactDOM from 'react-dom'
 import Countdown from 'react-countdown-now'
 
 class App extends Component {
-  constructor() {
+  constructor () {
     super()
     this.state = {
       items: [],
+<<<<<<< HEAD
       currentItem: {text:'', key:''},
       disabledItems: [{text:'andy', key:'ajsdfjaiosdgj'}],
+=======
+      currentItem: { text: '', key: '' }
+>>>>>>> 6a77d54290b5c9497e8ce9289e50f330fcbb2927
     }
   }
 
@@ -20,7 +24,7 @@ class App extends Component {
     const itemText = e.target.value
     const currentItem = { text: itemText, key: Date.now() }
     this.setState({
-      currentItem,
+      currentItem
     })
   }
 
@@ -29,10 +33,10 @@ class App extends Component {
     const newItem = this.state.currentItem
     if (newItem.text !== '') {
       console.log(newItem)
-      const items = [...this.state.items, newItem]
+      const items = [newItem, ...this.state.items]
       this.setState({
         items: items,
-        currentItem: { text: '', key: '' },
+        currentItem: { text: '', key: '' }
       })
     }
   }
@@ -42,10 +46,11 @@ class App extends Component {
       return item.key !== key
     })
     this.setState({
-      items: filteredItems,
+      items: filteredItems
     })
   }
 
+<<<<<<< HEAD
   disableFirstItem() {
     //es 6 & es7 spread operator
     console.log("hello")
@@ -67,6 +72,23 @@ class App extends Component {
     clearInterval(this.state.intervalTimer)
   }
 
+=======
+<<<<<<< HEAD
+  render () {
+    //setInterval(function () {
+      //if (this.items.length() > 0) {
+       // this.deleteItem(this.items[0].key)
+      //}
+    //}, 3000)
+    return (
+      <div className='App'>
+        <TodoItems entries={this.state.items} deleteItem={this.deleteItem} />
+=======
+  // ReactDOM.render (
+  //   <Countdown date = {Date.now() + 1000000} />,
+  //   document.getElementById('root')
+  // );
+>>>>>>> 6a77d54290b5c9497e8ce9289e50f330fcbb2927
 
   render() {
     return (
@@ -78,12 +100,17 @@ class App extends Component {
 
         <TodoItems entries = {this.state.items}
                    deleteItem = {this.deleteItem} />
+<<<<<<< HEAD
 
+=======
+>>>>>>> cf54f3d67f67feda211f4e0480edceaf16f18ef5
+>>>>>>> 6a77d54290b5c9497e8ce9289e50f330fcbb2927
         <TodoList
           addItem={this.addItem}
           inputElement={this.inputElement}
           handleInput={this.handleInput}
-          currentItem={this.state.currentItem} />
+          currentItem={this.state.currentItem}
+        />
       </div>
     )
   }
