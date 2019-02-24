@@ -1,25 +1,14 @@
 import React, { Component } from 'react'
 
-class countdown extends Component {
+class Countdown extends Component {
 
-  // 25 minutes
-  var count = 1500;
-
-  var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
-
-  function timer()
-  {
-    count=count-1;
-    if (count <= 0)
-    {
-       clearInterval(counter);
-       //counter ended, do something here
-       return;
-    }
-
-    document.getElementById("timer").innerHTML=count + " secs";
-  }
-
+  var timeleft = 10;
+  var downloadTimer = setInterval(function(){
+    document.getElementById("progressBar").value = 10 - timeleft;
+    timeleft -= 1;
+    if(timeleft <= 0)
+      clearInterval(downloadTimer);
+  }, 1000);
   render() {
 
   }
