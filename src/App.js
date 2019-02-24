@@ -57,7 +57,7 @@ class App extends Component {
 
   componentDidMount() {
     this.intervalTimer = setInterval( () =>
-      this.disableFirstItem(), 7000)
+      this.disableFirstItem(), 1500000)
   }
 
   componentWillUnmount() {
