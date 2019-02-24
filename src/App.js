@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import './App.css'
 import TodoList from './components/TodoList.js'
 import TodoItems from './components/TodoItems.js'
+// import Countdown from './components/Countdown.js'
+import ReactDOM from 'react-dom'
+import Countdown from 'react-countdown-now'
 
 class App extends Component {
   constructor() {
@@ -42,9 +45,15 @@ class App extends Component {
     })
   }
 
+  // ReactDOM.render (
+  //   <Countdown date = {Date.now() + 1000000} />,
+  //   document.getElementById('root')
+  // );
+
   render() {
     return (
       <div className="App">
+        <Countdown value="0" max="10" id="progressBar"></Countdown>
         <span id="timer"></span>
         <TodoItems entries = {this.state.items}
                    deleteItem = {this.deleteItem} />
