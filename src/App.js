@@ -11,12 +11,8 @@ class App extends Component {
     super()
     this.state = {
       items: [],
-<<<<<<< HEAD
       currentItem: {text:'', key:''},
       disabledItems: [{text:'andy', key:'ajsdfjaiosdgj'}],
-=======
-      currentItem: { text: '', key: '' }
->>>>>>> 6a77d54290b5c9497e8ce9289e50f330fcbb2927
     }
   }
 
@@ -50,7 +46,6 @@ class App extends Component {
     })
   }
 
-<<<<<<< HEAD
   disableFirstItem() {
     //es 6 & es7 spread operator
     console.log("hello")
@@ -72,23 +67,6 @@ class App extends Component {
     clearInterval(this.state.intervalTimer)
   }
 
-=======
-<<<<<<< HEAD
-  render () {
-    //setInterval(function () {
-      //if (this.items.length() > 0) {
-       // this.deleteItem(this.items[0].key)
-      //}
-    //}, 3000)
-    return (
-      <div className='App'>
-        <TodoItems entries={this.state.items} deleteItem={this.deleteItem} />
-=======
-  // ReactDOM.render (
-  //   <Countdown date = {Date.now() + 1000000} />,
-  //   document.getElementById('root')
-  // );
->>>>>>> 6a77d54290b5c9497e8ce9289e50f330fcbb2927
 
   render() {
     return (
@@ -100,11 +78,6 @@ class App extends Component {
 
         <TodoItems entries = {this.state.items}
                    deleteItem = {this.deleteItem} />
-<<<<<<< HEAD
-
-=======
->>>>>>> cf54f3d67f67feda211f4e0480edceaf16f18ef5
->>>>>>> 6a77d54290b5c9497e8ce9289e50f330fcbb2927
         <TodoList
           addItem={this.addItem}
           inputElement={this.inputElement}
