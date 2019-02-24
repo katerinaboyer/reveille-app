@@ -12,12 +12,18 @@
 
     <title>React App</title>
   </head>
-  <body>
+  <body onload = "startTimer()">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <audio id="aud" src="../public/bark.mp3"></audio>
     <div id="root"></div>
+
+      <!-- Rev Gifs -->
+      <!-- <img id="img" src="startpicture.jpg"
+      alt = "Rev gif loading..."
+      style ="position:fixed; bottom:0; left:10%; 
+      width:200px; height:200px;"/> -->
 
     <script>
 
@@ -28,6 +34,25 @@
           //alert("Hey, focus!")
         }
       }, 300);
+
+      // Rev Gif switch functions
+      function displayNextImage(){
+        x = (x === images.length - 1) ? 0 : x + 1;
+        document.getElementById("img").src = images[x];
+      }
+
+      function displayPreviousImage() {
+          x = (x <= 0) ? images.length - 1 : x - 1;
+          document.getElementById("img").src = images[x];
+      }
+
+      function startTimer() {
+          setInterval(displayNextImage, 2000);
+      }
+
+      var images = [], x = -1;
+      images[1] = "WagRight.gif";
+      images[0] = "BarkRight.gif";
     </script>
   </body>
 </html>
