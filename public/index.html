@@ -9,7 +9,7 @@
     />
     <meta name="theme-color" content="#000000" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    
+
     <title>React App</title>
   </head>
   <body>
@@ -19,16 +19,16 @@
     <audio id="aud" src="../public/bark.wav"></audio>
     <p id="log">Awaiting focus check.</p>
     <div id="root"></div>
-  
+
     <script>
-  
-      setInterval(function () { 
+
+      setInterval(function () {
         if (!document.hasFocus()) {
           var x = document.getElementById('aud')
           x.play()
-          alert("Hey, focus!")
+          //alert("Hey, focus!")
         }
-      }, 300); 
+      }, 300);
     </script>
   </body>
 </html>
