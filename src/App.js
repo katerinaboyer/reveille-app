@@ -68,6 +68,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      
         <TodoItems
           className="white"
           entries = {this.state.disabledItems}
