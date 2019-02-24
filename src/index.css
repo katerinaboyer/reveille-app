@@ -15,6 +15,9 @@ code {
 }
 
 .todoListMain .header input {
+  position: fixed;
+  bottom: 10px;
+  left: 40%;
   padding: 10px;
   font-size: 16px;
   border: 2px solid #FFF;
@@ -22,6 +25,9 @@ code {
 }
 
 .todoListMain .header button {
+  position: fixed;
+  bottom: 0px;
+  left: 60%;
   padding: 10px;
   font-size: 16px;
   margin: 10px;

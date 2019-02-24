@@ -45,6 +45,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <span id="timer"></span>
         <TodoItems entries = {this.state.items}
                    deleteItem = {this.deleteItem} />
         <TodoList
