@@ -4,11 +4,11 @@ import TodoList from './components/TodoList.js'
 import TodoItems from './components/TodoItems.js'
 
 class App extends Component {
-  constructor() {
+  constructor () {
     super()
     this.state = {
       items: [],
-      currentItem: {text:'', key:''},
+      currentItem: { text: '', key: '' }
     }
   }
 
@@ -16,7 +16,7 @@ class App extends Component {
     const itemText = e.target.value
     const currentItem = { text: itemText, key: Date.now() }
     this.setState({
-      currentItem,
+      currentItem
     })
   }
 
@@ -25,10 +25,10 @@ class App extends Component {
     const newItem = this.state.currentItem
     if (newItem.text !== '') {
       console.log(newItem)
-      const items = [...this.state.items, newItem]
+      const items = [newItem, ...this.state.items]
       this.setState({
         items: items,
-        currentItem: { text: '', key: '' },
+        currentItem: { text: '', key: '' }
       })
     }
   }
@@ -38,21 +38,25 @@ class App extends Component {
       return item.key !== key
     })
     this.setState({
-      items: filteredItems,
+      items: filteredItems
     })
   }
 
-  render() {
+  render () {
+    //setInterval(function () {
+      //if (this.items.length() > 0) {
+       // this.deleteItem(this.items[0].key)
+      //}
+    //}, 3000)
     return (
-      <div className="App">
-        <span id="timer"></span>
-        <TodoItems entries = {this.state.items}
-                   deleteItem = {this.deleteItem} />
+      <div className='App'>
+        <TodoItems entries={this.state.items} deleteItem={this.deleteItem} />
         <TodoList
           addItem={this.addItem}
           inputElement={this.inputElement}
           handleInput={this.handleInput}
-          currentItem={this.state.currentItem} />
+          currentItem={this.state.currentItem}
+        />
       </div>
     )
   }

@@ -17,15 +17,14 @@
     <div id="root"></div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <audio id="aud" src="../public/bark.wav"></audio>
-    <p id="log">Awaiting focus check.</p>
     <div id="root"></div>
 
     <script>
 
       setInterval(function () {
         if (!document.hasFocus()) {
-          var x = document.getElementById('aud')
-          x.play()
+          //var x = document.getElementById('aud')
+          //x.play()
           //alert("Hey, focus!")
         }
       }, 300);
