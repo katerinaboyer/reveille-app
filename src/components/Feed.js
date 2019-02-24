@@ -4,7 +4,7 @@ import './App.css'
 
 
 class Feed extends React.Component {
-    renderBubble(i) {
+    makeTask(i) {
         return <Bubble />
     }
 }
