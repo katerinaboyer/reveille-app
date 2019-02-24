@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import './App.css'
 import TodoList from './components/TodoList.js'
 import TodoItems from './components/TodoItems.js'
-// import Countdown from './components/Countdown.js'
-import ReactDOM from 'react-dom'
-import Countdown from 'react-countdown-now'
 
 class App extends Component {
   constructor () {
