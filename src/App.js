@@ -12,6 +12,7 @@ class App extends Component {
     this.state = {
       items: [],
       currentItem: {text:'', key:''},
+      disabledItems: [{text:'andy', key:'ajsdfjaiosdgj'}],
     }
   }
 
@@ -45,18 +46,39 @@ class App extends Component {
     })
   }
 
-  // ReactDOM.render (
-  //   <Countdown date = {Date.now() + 1000000} />,
-  //   document.getElementById('root')
-  // );
+  disableFirstItem() {
+    //es 6 & es7 spread operator
+    console.log("hello")
+    if (this.state.items.length > 0) {
+      const [first, ...rest ] = this.state.items;
+      this.setState({
+        items: rest,
+        disabledItems: [...this.state.disabledItems, first]
+      })
+    }
+  }
+
+  componentDidMount() {
+    this.intervalTimer = setInterval( () =>
+      this.disableFirstItem(), 7000)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.intervalTimer)
+  }
+
 
   render() {
     return (
       <div className="App">
-        <Countdown value="0" max="10" id="progressBar"></Countdown>
-        <span id="timer"></span>
+        <TodoItems
+          className="white"
+          entries = {this.state.disabledItems}
+          deleteItem = {this.deleteItem} />
+
         <TodoItems entries = {this.state.items}
                    deleteItem = {this.deleteItem} />
+
         <TodoList
           addItem={this.addItem}
           inputElement={this.inputElement}
