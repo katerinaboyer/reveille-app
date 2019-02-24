@@ -1,32 +1,57 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
 import './App.css'
+import TodoList from '/Users/katerinaboyer/Documents/reveille-app/src/components/TodoList.js'
+import TodoItems from '/Users/katerinaboyer/Documents/reveille-app/src/components/TodoItems.js'
 
 class App extends Component {
-  state = {
-    number: 1
-  }
-
-  // this is where function for button goes
-  timer () {
-    var myTimer = setInterval(myClock, 1000)
-    var c = 5
-
-    function myClock () {
-      document.getElementById('demo').innerHTML = --c
-      if (c == 0) {
-        clearInterval(myTimer)
-        alert('Times Up!')
-      }
+  constructor() {
+    super()
+    this.state = {
+      items: [],
+      currentItem: {text:'', key:''},
     }
   }
 
-  render () {
+  handleInput = e => {
+    const itemText = e.target.value
+    const currentItem = { text: itemText, key: Date.now() }
+    this.setState({
+      currentItem,
+    })
+  }
+
+  addItem = e => {
+    e.preventDefault()
+    const newItem = this.state.currentItem
+    if (newItem.text !== '') {
+      console.log(newItem)
+      const items = [...this.state.items, newItem]
+      this.setState({
+        items: items,
+        currentItem: { text: '', key: '' },
+      })
+    }
+  }
+
+  deleteItem = key => {
+    const filteredItems = this.state.items.filter(item => {
+      return item.key !== key
+    })
+    this.setState({
+      items: filteredItems,
+    })
+  }
+
+  render() {
     return (
-      <div className='App'>
-        Hello World
-        <button onclick='clock()'> Start a timer </button>
-        <button onclick='clearInterval(myTimer)'> Pause Timer </button>
+      <div className="App">
+        <TodoItems entries = {this.state.items}
+                   deleteItem = {this.deleteItem} />
+        <TodoList
+          addItem={this.addItem}
+          inputElement={this.inputElement}
+          handleInput={this.handleInput}
+          currentItem={this.state.currentItem} />
       </div>
     )
   }
